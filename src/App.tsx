@@ -5,9 +5,11 @@ function App() {
 
   return (
     <>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <p className="text-sm ...">The quick brown fox ...</p>
+      <p className="text-base ...">The quick brown fox ...</p>
+      <p className="text-lg ...">The quick brown fox ...</p>
+      <p className="text-xl ...">The quick brown fox ...</p>
+      <p className="text-2xl ...">The quick brown fox ...</p>
     </>
   )
 }
