@@ -20,9 +20,9 @@ export default function Hero() {
       <Grid className="absolute inset-0 flex items-center">
         <Grid className="px-6 md:px-12 max-w-xl">
           <img src={championsLogo} alt="Worlds 25" className="h-30  mb-2" />
-          <h1 className="text-3xl md:text-5xl font-semibold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4">
             El Mundial 2025 empieza ya
-          </h1>
+          </h2>
           <p className="text-white/80 leading-relaxed mb-6">
             La batalla para labrarse un legado eterno está a punto de comenzar…
           </p>

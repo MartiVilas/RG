@@ -4,6 +4,8 @@ import LOL from './assets/lol-sn24-1920x1080-kv-final.jpg'
 import LOR from './assets/lor-set924-dp-riotbarapplicationswitcher-1920x1080.jpg'
 import WR from './assets/wr-2025-patch-5a-kv-1920x1080.png'
 import TwoXKO from './assets/rg-com-whoweare-2xko-productcard.jpg'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+
 
 type Game = {
   title: string
@@ -65,16 +67,15 @@ export default function NuestrosJuegos() {
             rel="noreferrer"
             className="group relative rounded-lg overflow-hidden shadow-[0_8px_0_rgba(0,0,0,0.25)]"
           >
-            {/* Imagen de fondo */}
+          
             <div
               className="aspect-[16/9] bg-center bg-cover transition-transform duration-300 group-hover:scale-[1.03]"
               style={{ backgroundImage: `url(${g.img})` }}
             />
-
-            {/* Overlay degradado abajo (para legibilidad) */}
+            
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-            {/* Contenido inferior */}
+            
             <div className="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between">
               <div>
                 <h3 className="text-lg font-semibold drop-shadow">
@@ -87,16 +88,8 @@ export default function NuestrosJuegos() {
                 )}
               </div>
 
-              {/* Flecha / CTA sutil */}
               <div className="translate-y-1 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M13.172 12 8.222 7.05l1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
-                </svg>
+                <ChevronRightIcon/>
               </div>
             </div>
           </a>
