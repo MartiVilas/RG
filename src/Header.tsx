@@ -8,14 +8,14 @@ export const Header = () => {
     <Grid className="flex justify-between items-center w-full p-4 bg-gray-950 shadow-md">
       {/* IZQUIERDA: Logo + Menú */}
       <Grid className="flex items-center gap-8">
-        <img src={RiotLogo} className="h-10" alt="Riot Games Logo"/>
+        <img src={RiotLogo} className="h-10" alt="Riot Games Logo" />
         <ul className="flex ml-10 gap-10">
-          <a href='/home'>
-          <li className="relative text-white cursor-pointer pb-1" >
-            <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-28px] after:h-[6px] after:w-0 after:bg-red-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-full">
-              Inicio
-            </span>
-          </li>
+          <a href="/home">
+            <li className="relative text-white cursor-pointer pb-1">
+              <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-28px] after:h-[6px] after:w-0 after:bg-red-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-full">
+                Inicio
+              </span>
+            </li>
           </a>
 
           <li className="relative text-white cursor-pointer pb-1">
