@@ -12,23 +12,13 @@ import TwoXKO from './assets/rg-com-whoweare-2xko-productcard.jpg'
 type Game = {
   title: string
   href: string
-  img: string // ruta a la imagen de fondo de la card
-  tag?: string // opcional: “PC”, “Móvil”, etc.
+  img: string
+  tag?: string
 }
 
 const GAMES: Game[] = [
-  {
-    title: 'League of Legends',
-    href: 'https://www.leagueoflegends.com/',
-    img: LOL,
-    tag: 'PC',
-  },
-  {
-    title: 'VALORANT',
-    href: 'https://playvalorant.com/',
-    img: Valorant,
-    tag: 'PC',
-  },
+  { title: 'League of Legends', href: 'https://www.leagueoflegends.com/', img: LOL, tag: 'PC' },
+  { title: 'VALORANT', href: 'https://playvalorant.com/', img: Valorant, tag: 'PC' },
   {
     title: 'Teamfight Tactics',
     href: 'https://teamfighttactics.leagueoflegends.com/',
@@ -47,12 +37,7 @@ const GAMES: Game[] = [
     img: WR,
     tag: 'Móvil',
   },
-  {
-    title: '2XKO',
-    href: 'https://2xko.riotgames.com/',
-    img: TwoXKO,
-    tag: 'PC',
-  },
+  { title: '2XKO', href: 'https://2xko.riotgames.com/', img: TwoXKO, tag: 'PC' },
 ]
 
 export default function NuestrosJuegos() {
@@ -60,12 +45,21 @@ export default function NuestrosJuegos() {
   const [canLeft, setCanLeft] = useState(false)
   const [canRight, setCanRight] = useState(true)
 
+  // Tamaños base
+  const CARD_WIDTH = 400 // ancho máximo de cada card
+  const GAP = 32 // gap-8 (px)
+  const ARROW_SIZE = 44 // tamaño botón flecha
+  const ARROW_MARGIN = 12 // separación de borde
+  const GUTTER = ARROW_SIZE + ARROW_MARGIN // padding lateral para que no “pisen” las cards
+
   // actualiza estado de flechas según posición de scroll
   const updateArrows = () => {
     const el = trackRef.current
     if (!el) return
     setCanLeft(el.scrollLeft > 0)
-    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1)
+    // compensa pequeñas diferencias de layout con un epsilon
+    const epsilon = 1
+    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - epsilon)
   }
 
   useEffect(() => {
@@ -80,26 +74,24 @@ export default function NuestrosJuegos() {
     }
   }, [])
 
-  const CARD_WIDTH = 400 // ancho de cada card (ajusta a tu gusto)
-  const GAP = 32 // gap-8 = 32px
   const scrollByCards = (n: number) => {
     trackRef.current?.scrollBy({ left: n * (CARD_WIDTH + GAP), behavior: 'smooth' })
   }
 
   return (
-    <section className="bg-black text-white px-6 md:px-10 py-10">
+    <section className="bg-black text-white w-full px-0 py-10">
       <h2 className="text-l tracking-wide text-white mb-6 text-center">NUESTROS JUEGOS</h2>
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative w-full">
         {/* Flecha izquierda */}
         <button
           aria-label="Anterior"
           onClick={() => scrollByCards(-1)}
           disabled={!canLeft}
           className="
-            absolute left-0 top-1/2 -translate-y-1/2 z-10
+            absolute left-3 top-1/2 -translate-y-1/2 z-10
             hidden md:flex items-center justify-center
-            size-10 rounded-full backdrop-blur
+            w-11 h-11 rounded-full backdrop-blur
             transition
             disabled:opacity-30 disabled:cursor-not-allowed
             bg-white/10 hover:bg-white/20
@@ -108,7 +100,7 @@ export default function NuestrosJuegos() {
           <ChevronLeftIcon />
         </button>
 
-        {/* Pista horizontal con snap */}
+        {/* Track horizontal a ancho completo con gutter para las flechas */}
         <div
           ref={trackRef}
           className="
@@ -116,10 +108,15 @@ export default function NuestrosJuegos() {
             overflow-x-auto overflow-y-hidden
             scroll-smooth
             snap-x snap-mandatory
-            pb-4 px-2 md:px-8
+            pb-4
             [scrollbar-width:none]
           "
-          style={{ WebkitOverflowScrolling: 'touch', msOverflowStyle: 'none' }}
+          style={{
+            WebkitOverflowScrolling: 'touch',
+            msOverflowStyle: 'none',
+            paddingLeft: GUTTER,
+            paddingRight: GUTTER,
+          }}
         >
           {/* Ocultar scrollbar WebKit */}
           <style>{`div::-webkit-scrollbar{display:none}`}</style>
@@ -132,7 +129,7 @@ export default function NuestrosJuegos() {
               rel="noreferrer"
               className="
                 group relative shrink-0 snap-start
-                w-[400px]
+                w-[min(85vw,400px)]
                 rounded-xl overflow-hidden
                 shadow-[0_8px_0_rgba(0,0,0,0.25)]
                 transition-transform duration-300 hover:scale-[1.05]
@@ -166,9 +163,9 @@ export default function NuestrosJuegos() {
           onClick={() => scrollByCards(1)}
           disabled={!canRight}
           className="
-            absolute right-0 top-1/2 -translate-y-1/2 z-10
+            absolute right-3 top-1/2 -translate-y-1/2 z-10
             hidden md:flex items-center justify-center
-            size-10 rounded-full backdrop-blur
+            w-11 h-11 rounded-full backdrop-blur
             transition
             disabled:opacity-30 disabled:cursor-not-allowed
             bg-white/10 hover:bg-white/20
