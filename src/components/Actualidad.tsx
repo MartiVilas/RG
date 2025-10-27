@@ -40,21 +40,24 @@ export const Actualidad = () => {
             title: 'Bocetos del desarrollo: ARAM',
             img: NOT1,
             logo: LOL,
+            url: '/home',
           },
           {
             title: 'Videoclip del himno del Mundial 2025',
             img: NOT2,
             logo: LOL,
+            url: '/home',
           },
           {
             title: 'Avance de la versión 6.3 - League of Legends: Wild Rift',
             img: NOT3,
             logo: LOR,
+            url: '/home',
           },
         ].map((news, i) => (
           <a
             key={i}
-            href="#"
+            href={news.url}
             className="flex items-center justify-between bg-white/5 hover:bg-white/10 transition rounded-2xl ring-1 ring-white/10 hover:ring-white/20 px-3 py-3"
             style={{ height: '32%' }}
           >

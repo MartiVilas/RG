@@ -6,7 +6,6 @@ import championsLogo from '../assets/Valorant_Champions_Tour_logo.png'
 export default function Hero() {
   return (
     <Grid className="relative w-full overflow-hidden bg-black">
-      {/* Imagen de fondo */}
       <img
         src={hero}
         alt="Worlds"
