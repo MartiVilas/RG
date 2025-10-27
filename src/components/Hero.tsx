@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
-import hero from './assets/act5-hero-banner-3840x1600-nonotch.png' 
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import championsLogo from './assets/Valorant_Champions_Tour_logo.png'
+import hero from '../assets/act5-hero-banner-3840x1600-nonotch.png'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import championsLogo from '../assets/Valorant_Champions_Tour_logo.png'
 
 export default function Hero() {
   return (
@@ -14,7 +14,6 @@ export default function Hero() {
       />
       <Grid className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
 
-      
       <Grid className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
 
       <Grid className="absolute inset-0 flex items-center">
@@ -34,7 +33,7 @@ export default function Hero() {
                        hover:from-sky-400 hover:to-cyan-300 transition"
           >
             <span className="inline-grid place-items-center h-6 w-6 rounded-full bg-black/30">
-              {<ChevronRightIcon/>}
+              {<ChevronRightIcon />}
             </span>
             Ver ahora
           </a>

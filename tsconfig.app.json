@@ -27,9 +27,9 @@
   "include": [
     "src",
     "App.tsx",
-    "src/Header.tsx",
-    "src/Hero.tsx",
+    "src/components/Header.tsx",
+    "src/components/Hero.tsx",
     "src/Home.tsx",
-    "src/NuestrosJuegos.tsx"
+    "src/components/NuestrosJuegos.tsx"
   ]
 }

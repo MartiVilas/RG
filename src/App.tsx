@@ -1,7 +1,7 @@
-import './App.css'
-import { Header } from './Header'
+import './styles/App.css'
+import { Header } from './components/Header'
 import { Home } from './Home'
-import './index.css'
+import './styles/index.css'
 
 function App() {
   return (

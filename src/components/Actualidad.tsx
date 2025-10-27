@@ -1,9 +1,12 @@
 import { Grid } from '@mui/material'
 
-import ACTUALIDAD from '../src/assets/web-rb-header-final-v04-kv.png'
-import NOT2 from '../src/assets/wmv25-textless-image-riotclient-251010-min.jpg'
-import NOT1 from '../src/assets/dd-aram-textless-banner.jpg'
-import NOT3 from '../src/assets/1920x1080-textles.jpg'
+import ACTUALIDAD from '../assets/web-rb-header-final-v04-kv.png'
+
+import NOT2 from '../assets/wmv25-textless-image-riotclient-251010-min.jpg'
+import NOT1 from '../assets/dd-aram-textless-banner.jpg'
+import NOT3 from '../assets/1920x1080-textles.jpg'
+import LOR from '../assets/lor-icon.png'
+import LOL from '../assets/League_of_Legends_icon.svg'
 
 export const Actualidad = () => {
   return (
@@ -17,7 +20,6 @@ export const Actualidad = () => {
       px={4}
       py={8}
     >
-      {/* Columna izquierda: imagen */}
       <Grid>
         <h2 className="text-2xl font-bold mb-4">ACTUALIDAD</h2>
         <a href="https://www.youtube.com/@leagueoflegends" target="_blank" rel="noreferrer">
@@ -32,34 +34,44 @@ export const Actualidad = () => {
         </Grid>
       </Grid>
 
-      {/* Columna derecha: noticias reducidas a la mitad del ancho */}
-      <Grid className="h-[600px] flex flex-col justify-between gap-4">
+      <Grid className="h-[600px] flex flex-col justify-between gap-4 mt-12 ml-12">
         {[
           {
             title: 'Bocetos del desarrollo: ARAM',
             img: NOT1,
+            logo: LOL,
           },
           {
             title: 'Videoclip del himno del Mundial 2025',
             img: NOT2,
+            logo: LOL,
           },
           {
             title: 'Avance de la versión 6.3 - League of Legends: Wild Rift',
             img: NOT3,
+            logo: LOR,
           },
         ].map((news, i) => (
           <a
             key={i}
             href="#"
             className="flex items-center justify-between bg-white/5 hover:bg-white/10 transition rounded-2xl ring-1 ring-white/10 hover:ring-white/20 px-3 py-3"
-            style={{ height: '32%' }} // ocupa 1/3 aprox del alto total
+            style={{ height: '32%' }}
           >
             <div className="flex-1 pr-3">
               <div className="text-white font-semibold text-[16px] leading-snug">{news.title}</div>
               <div className="mt-2 flex items-center gap-2 text-[11px] uppercase tracking-wide text-white/60">
-                <span className="inline-flex size-5 items-center justify-center rounded-full bg-white/10">
-                  📰
-                </span>
+                {news.logo ? (
+                  <img
+                    src={news.logo}
+                    alt="Logo"
+                    className="h-5 w-5 rounded-full object-contain bg-white/10 p-0.5"
+                  />
+                ) : (
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10">
+                    📰
+                  </span>
+                )}
                 <span>Noticias</span>
               </div>
             </div>

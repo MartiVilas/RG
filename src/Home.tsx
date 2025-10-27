@@ -1,8 +1,7 @@
 import { Grid } from '@mui/material'
-import ActualidadImg from './assets/web-rb-header-final-v04-kv.png'
-import NuestrosJuegos from './NuestrosJuegos'
-import Hero from './Hero'
-import { Actualidad } from './Actualidad'
+import NuestrosJuegos from './components/NuestrosJuegos'
+import Hero from './components/Hero'
+import { Actualidad } from './components/Actualidad'
 
 export const Home = () => {
   return (
@@ -10,7 +9,7 @@ export const Home = () => {
       <Hero />
 
       <Grid container spacing={2} className="p-8">
-        <Actualidad img={ActualidadImg} />
+        <Actualidad />
         <NuestrosJuegos />
       </Grid>
     </Grid>

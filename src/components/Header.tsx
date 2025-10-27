@@ -1,12 +1,11 @@
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import LoginIcon from '@mui/icons-material/Login'
-import RiotLogo from './assets/riot-games-rgb-logos-web/Riot_Games_RGB_Logos/001_RG_2021_Logomark/001.1_RG_2021_LOGOMARK_RED.png'
+import RiotLogo from '../assets/riot-games-rgb-logos-web/Riot_Games_RGB_Logos/001_RG_2021_Logomark/001.1_RG_2021_LOGOMARK_RED.png'
 
 export const Header = () => {
   return (
     <Grid className="flex justify-between items-center w-full p-4 bg-gray-950 shadow-md">
-      {/* IZQUIERDA: Logo + Menú */}
       <Grid className="flex items-center gap-8">
         <img src={RiotLogo} className="h-10" alt="Riot Games Logo" />
         <ul className="flex ml-10 gap-10">
@@ -32,7 +31,6 @@ export const Header = () => {
         </ul>
       </Grid>
 
-      {/* DERECHA: Botón */}
       <Button variant="contained" color="error" startIcon={<LoginIcon />}>
         Iniciar sesión
       </Button>
