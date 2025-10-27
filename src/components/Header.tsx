@@ -2,6 +2,7 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import LoginIcon from '@mui/icons-material/Login'
 import RiotLogo from '../assets/riot-games-rgb-logos-web/Riot_Games_RGB_Logos/001_RG_2021_Logomark/001.1_RG_2021_LOGOMARK_RED.png'
+import { Link, Router } from 'react-router-dom'
 
 export const Header = () => {
   return (
@@ -31,7 +32,13 @@ export const Header = () => {
         </ul>
       </Grid>
 
-      <Button variant="contained" color="error" startIcon={<LoginIcon />}>
+      <Button
+        variant="contained"
+        color="error"
+        startIcon={<LoginIcon />}
+        component={Link}
+        to="/login"
+      >
         Iniciar sesión
       </Button>
     </Grid>
