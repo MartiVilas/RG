@@ -34,7 +34,9 @@ export default function Hero() {
             <span className="inline-grid place-items-center h-6 w-6 rounded-full bg-black/30">
               {<ChevronRightIcon />}
             </span>
-            Ver ahora
+            <a href="https://www.youtube.com/watch?v=PZkuPAMK4sI" target="_blank" rel="noreferrer">
+              Ver ahora
+            </a>
           </a>
         </Grid>
       </Grid>
