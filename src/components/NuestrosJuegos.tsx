@@ -2,62 +2,25 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { useEffect, useRef, useState } from 'react'
 
-import Valorant from '../assets/valorant-s25a1-riot-games-homepage-product-card-1920x1080.png'
-import TFT from '../assets/tft-st1525-platform-riotbar-gamecard-1920x1080-v001-summoner.png'
-import LOL from '../assets/lol-sn24-1920x1080-kv-final.jpg'
-import LOR from '../assets/lor-set924-dp-riotbarapplicationswitcher-1920x1080.jpg'
-import WR from '../assets/wr-2025-patch-5a-kv-1920x1080.png'
-import TwoXKO from '../assets/rg-com-whoweare-2xko-productcard.jpg'
-
-type Game = {
-  title: string
-  href: string
-  img: string
-  tag?: string
-}
-
-const GAMES: Game[] = [
-  { title: 'League of Legends', href: 'https://www.leagueoflegends.com/', img: LOL, tag: 'PC' },
-  { title: 'VALORANT', href: 'https://playvalorant.com/', img: Valorant, tag: 'PC' },
-  {
-    title: 'Teamfight Tactics',
-    href: 'https://teamfighttactics.leagueoflegends.com/',
-    img: TFT,
-    tag: 'PC + Móvil',
-  },
-  {
-    title: 'Legends of Runeterra',
-    href: 'https://playruneterra.com/',
-    img: LOR,
-    tag: 'PC + Móvil',
-  },
-  {
-    title: 'League of Legends: Wild Rift',
-    href: 'https://wildrift.leagueoflegends.com/',
-    img: WR,
-    tag: 'Móvil',
-  },
-  { title: '2XKO', href: 'https://2xko.riotgames.com/', img: TwoXKO, tag: 'PC' },
-]
+import {GAMES} from '../db/infos'
 
 export default function NuestrosJuegos() {
   const trackRef = useRef<HTMLDivElement>(null)
   const [canLeft, setCanLeft] = useState(false)
   const [canRight, setCanRight] = useState(true)
 
-  // Tamaños base
-  const CARD_WIDTH = 400 // ancho máximo de cada card
-  const GAP = 32 // gap-8 (px)
-  const ARROW_SIZE = 44 // tamaño botón flecha
-  const ARROW_MARGIN = 12 // separación de borde
-  const GUTTER = ARROW_SIZE + ARROW_MARGIN // padding lateral para que no “pisen” las cards
 
-  // actualiza estado de flechas según posición de scroll
+  const CARD_WIDTH = 400 
+  const GAP = 32 
+  const ARROW_SIZE = 44 
+  const ARROW_MARGIN = 12 
+  const GUTTER = ARROW_SIZE + ARROW_MARGIN 
+
+ 
   const updateArrows = () => {
     const el = trackRef.current
     if (!el) return
     setCanLeft(el.scrollLeft > 0)
-    // compensa pequeñas diferencias de layout con un epsilon
     const epsilon = 1
     setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - epsilon)
   }

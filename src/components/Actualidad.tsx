@@ -1,14 +1,11 @@
 import { Grid } from '@mui/material'
 
 import ACTUALIDAD from '../assets/web-rb-header-final-v04-kv.png'
-
-import NOT2 from '../assets/wmv25-textless-image-riotclient-251010-min.jpg'
-import NOT1 from '../assets/dd-aram-textless-banner.jpg'
-import NOT3 from '../assets/1920x1080-textles.jpg'
-import LOR from '../assets/lor-icon.png'
-import LOL from '../assets/League_of_Legends_icon.svg'
+import {NEWS} from '../db/infos'
 
 export const Actualidad = () => {
+
+  const news = NEWS
   return (
     <Grid
       container
@@ -35,26 +32,7 @@ export const Actualidad = () => {
       </Grid>
 
       <Grid className="h-[600px] flex flex-col justify-between gap-4 mt-12 ml-12">
-        {[
-          {
-            title: 'Bocetos del desarrollo: ARAM',
-            img: NOT1,
-            logo: LOL,
-            url: '/home',
-          },
-          {
-            title: 'Videoclip del himno del Mundial 2025',
-            img: NOT2,
-            logo: LOL,
-            url: '/home',
-          },
-          {
-            title: 'Avance de la versión 6.3 - League of Legends: Wild Rift',
-            img: NOT3,
-            logo: LOR,
-            url: '/home',
-          },
-        ].map((news, i) => (
+        {news.map((news, i) => (
           <a
             key={i}
             href={news.url}
