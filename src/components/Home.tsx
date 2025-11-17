@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
-import NuestrosJuegos from './components/NuestrosJuegos'
-import Hero from './components/Hero'
-import { Actualidad } from './components/Actualidad'
+import NuestrosJuegos from './NuestrosJuegos'
+import Hero from './Hero'
+import { Actualidad } from './Actualidad'
 
 export const Home = () => {
   return (
