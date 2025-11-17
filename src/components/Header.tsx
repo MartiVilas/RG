@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import LoginIcon from '@mui/icons-material/Login'
 import RiotLogo from '../assets/riot-games-rgb-logos-web/Riot_Games_RGB_Logos/001_RG_2021_Logomark/001.1_RG_2021_LOGOMARK_RED.png'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   return (
@@ -12,30 +12,30 @@ export const Header = () => {
 
         <ul className="flex ml-10 gap-10">
           <li>
-            <NavLink
+            <Link
               to="/home"
               className="text-white cursor-pointer px-3 py-1 rounded-md transition-all duration-200 hover:bg-red-600 hover:rounded-lg hover:font-semibold"
             >
               Inicio
-            </NavLink>
+            </Link>
           </li>
 
           <li>
-            <NavLink
+            <Link
               to="/about"
               className="text-white cursor-pointer px-3 py-1 rounded-md transition-all duration-200 hover:bg-red-600 hover:rounded-lg hover:font-semibold"
             >
               Sobre mí
-            </NavLink>
+            </Link>
           </li>
 
           <li>
-            <NavLink
+            <Link
               to="/contact"
               className="text-white cursor-pointer px-3 py-1 rounded-md transition-all duration-200 hover:bg-red-600 hover:rounded-lg hover:font-semibold"
             >
               Contacto
-            </NavLink>
+            </Link>
           </li>
         </ul>
       </Grid>
@@ -44,7 +44,7 @@ export const Header = () => {
         variant="contained"
         color="error"
         startIcon={<LoginIcon />}
-        component={NavLink}
+        component={Link}
         to="/login"
       >
         Iniciar sesión
