@@ -2,12 +2,12 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { useEffect, useRef, useState } from 'react'
 
-import Valorant from '../assets/valorant-s25a1-riot-games-homepage-product-card-1920x1080.png'
-import TFT from '../assets/tft-st1525-platform-riotbar-gamecard-1920x1080-v001-summoner.png'
-import LOL from '../assets/lol-sn24-1920x1080-kv-final.jpg'
-import LOR from '../assets/lor-set924-dp-riotbarapplicationswitcher-1920x1080.jpg'
-import WR from '../assets/wr-2025-patch-5a-kv-1920x1080.png'
-import TwoXKO from '../assets/rg-com-whoweare-2xko-productcard.jpg'
+import Valorant from '../assets/valorant-s25a1-riot-games-homepage-product-card-1920x1080.webp'
+import TFT from '../assets/tft-st1525-platform-riotbar-gamecard-1920x1080-v001-summoner.webp'
+import LOL from '../assets/lol-sn24-1920x1080-kv-final.webp'
+import LOR from '../assets/lor-set924-dp-riotbarapplicationswitcher-1920x1080.webp'
+import WR from '../assets/wr-2025-patch-5a-kv-1920x1080.webp'
+import TwoXKO from '../assets/rg-com-whoweare-2xko-productcard.webp'
 
 type Game = {
   title: string

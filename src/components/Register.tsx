@@ -4,7 +4,7 @@ import { Grid, Button, Typography } from '@mui/material'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import { useNavigate, Link } from 'react-router-dom'
 import { registerUser } from '../api/auth'
-import BgImg from '../assets/entrance-sign.jpg' // cambia si quieres
+import BgImg from '../assets/entrance-sign.jpg'
 
 export const Register = () => {
   const [email, setEmail] = useState('')
@@ -36,7 +36,7 @@ export const Register = () => {
       setError(res.error)
       return
     }
-    navigate('/home') // o a donde quieras
+    navigate('/home')
   }
 
   return (
@@ -127,7 +127,7 @@ export const Register = () => {
           </Button>
 
           <div className="text-center text-sm text-gray-400">
-            ¿Ya tienes cuenta?{' '}
+            ¿Ya tienes cuenta?
             <Link to="/login" className="text-red-500 hover:underline">
               Inicia sesión
             </Link>

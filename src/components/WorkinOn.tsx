@@ -1,7 +1,6 @@
 export const WorkingOn = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-center px-6">
-      {/* Icono animado */}
       <div className="animate-pulse text-red-600 mb-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +25,8 @@ export const WorkingOn = () => {
 
       {/* Subtexto */}
       <p className="text-gray-300 max-w-md mb-8">
-        Estamos mejorando esta sección para ofrecerte una experiencia épica.
-        Vuelve pronto para descubrir lo que estamos preparando. 🔥
+        Estamos mejorando esta sección para ofrecerte una experiencia épica. Vuelve pronto para
+        descubrir lo que estamos preparando.
       </p>
 
       {/* Botón */}
@@ -37,7 +36,6 @@ export const WorkingOn = () => {
       >
         Volver al inicio
       </a>
-
     </div>
   )
 }
