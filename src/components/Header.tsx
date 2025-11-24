@@ -25,7 +25,7 @@ export const Header = () => {
               to="/about"
               className="text-white cursor-pointer px-3 py-1 rounded-md transition-all duration-200 hover:bg-red-600 hover:rounded-lg hover:font-semibold"
             >
-              Sobre mí
+              Sobre nosotros
             </Link>
           </li>
 

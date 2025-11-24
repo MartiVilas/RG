@@ -1,3 +1,8 @@
 #root {
   font-family: 'Geist', system-ui, sans-serif;
 }
+
+::selection {
+  background-color: #dc2626; /* red-600 de Tailwind */
+  color: white; /* opcional, pero casi siempre queda mejor */
+}
