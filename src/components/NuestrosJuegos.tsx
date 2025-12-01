@@ -83,7 +83,6 @@ export default function NuestrosJuegos() {
       <h2 className="text-l tracking-wide text-white mb-6 text-center">NUESTROS JUEGOS</h2>
 
       <div className="relative w-full">
-        {/* Flecha izquierda */}
         <button
           aria-label="Anterior"
           onClick={() => scrollByCards(-1)}
