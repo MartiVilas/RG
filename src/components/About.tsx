@@ -2,22 +2,20 @@ import { Grid } from '@mui/material'
 import Video from '../assets/playerfirst.mp4'
 import { Header } from './Header'
 import RiotGif from '../assets/riot-3d-fists.gif'
+import AudioCEO from '../assets/discurso.mp3'
 
 export const About = () => {
   return (
     <Grid className="min-h-screen text-white">
       <Header />
 
-      {/* BANNER DE VIDEO */}
       <div className="relative w-full h-[350px] overflow-hidden">
         <video src={Video} autoPlay loop muted playsInline className="w-full h-full object-cover" />
-
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl font-bold drop-shadow-lg">Sobre Nosotros</h1>
         </div>
       </div>
 
-      {/* SECCIÓN DE CONTENIDO */}
       <div className="flex justify-center px-10 py-16 text-black bg-white">
         <img src={RiotGif} alt="Riot Games Logo" className="w-[400px] h-[400px] mr-10" />
 
@@ -31,6 +29,10 @@ export const About = () => {
             los laboratorios de radianta de Tierra Alfa, apostamos por crear juegos y estar al
             servicio de quienes tanto los adoran.
           </p>
+
+          <p className="leading-relaxed text-lg mb-2 mt-2">Y aquí un mensaje de nuestro CEO: Dylan Jadeja</p>
+
+          <audio src={AudioCEO} controls />
         </div>
       </div>
     </Grid>
