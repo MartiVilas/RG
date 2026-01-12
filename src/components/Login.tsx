@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Grid, Button, Typography, Box } from '@mui/material'
 import LoginIcon from '@mui/icons-material/Login'
 import { Link } from 'react-router-dom'
@@ -8,6 +8,11 @@ import BgImg from '../assets/pc-cafe-2.jpeg'
 export const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const emailInputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    emailInputRef.current?.focus()
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -56,6 +61,7 @@ export const Login = () => {
               "
               placeholder="NOMBRE DE USUARIO"
               required
+              ref={emailInputRef}
             />
           </div>
 
@@ -85,6 +91,7 @@ export const Login = () => {
             startIcon={<LoginIcon />}
             fullWidth
             className="mt-2 py-2"
+            aria-label="Iniciar Sesión"
           >
             Entrar
           </Button>
