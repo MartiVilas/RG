@@ -4,7 +4,7 @@ import { Grid, Button, Typography } from '@mui/material'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import { useNavigate, Link } from 'react-router-dom'
 import { registerUser } from '../api/auth'
-import BgImg from '../assets/entrance-sign.jpg'
+import BgImg from '../assets/entrance-sign.webp'
 
 export const Register = () => {
   const [email, setEmail] = useState('')

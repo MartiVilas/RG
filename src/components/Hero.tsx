@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
-import hero from '../assets/act5-hero-banner-3840x1600-nonotch.png'
+import hero from '../assets/act5-hero-banner-3840x1600-nonotch.webp'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import championsLogo from '../assets/Valorant_Champions_Tour_logo.png'
+import championsLogo from '../assets/Valorant_Champions_Tour_logo.webp'
 
 export default function Hero() {
   return (
@@ -26,17 +26,17 @@ export default function Hero() {
           </p>
 
           <a
-            href="#"
+            href="https://www.youtube.com/watch?v=PZkuPAMK4sI"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-3 rounded-full px-6 py-3 text-lg font-semibold
-                       text-white bg-gradient-to-r from-sky-500 to-cyan-400 shadow-lg
-                       hover:from-sky-400 hover:to-cyan-300 transition"
+             text-white bg-gradient-to-r from-sky-500 to-cyan-400 shadow-lg
+             hover:from-sky-400 hover:to-cyan-300 transition"
           >
             <span className="inline-grid place-items-center h-6 w-6 rounded-full bg-black/30">
-              {<ChevronRightIcon />}
+              <ChevronRightIcon />
             </span>
-            <a href="https://www.youtube.com/watch?v=PZkuPAMK4sI" target="_blank" rel="noreferrer">
-              Ver ahora
-            </a>
+            Ver ahora
           </a>
         </Grid>
       </Grid>

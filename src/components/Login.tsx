@@ -3,7 +3,7 @@ import { Grid, Button, Typography, Box } from '@mui/material'
 import LoginIcon from '@mui/icons-material/Login'
 import { Link } from 'react-router-dom'
 import { loginUser } from '../api/auth'
-import BgImg from '../assets/pc-cafe-2.jpeg'
+import BgImg from '../assets/pc-cafe-2.webp'
 
 export const Login = () => {
   const [email, setEmail] = useState('')

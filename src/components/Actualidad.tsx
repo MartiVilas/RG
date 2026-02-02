@@ -1,11 +1,10 @@
 import { Grid } from '@mui/material'
 
-import ACTUALIDAD from '../assets/web-rb-header-final-v04-kv.png'
-
-import NOT2 from '../assets/wmv25-textless-image-riotclient-251010-min.jpg'
-import NOT1 from '../assets/dd-aram-textless-banner.jpg'
-import NOT3 from '../assets/1920x1080-textles.jpg'
-import LOR from '../assets/lor-icon.png'
+import ACTUALIDAD from '../assets/web-rb-header-final-v04-kv.webp'
+import NOT2 from '../assets/wmv25-textless-image-riotclient-251010-min.webp'
+import NOT1 from '../assets/dd-aram-textless-banner.webp'
+import NOT3 from '../assets/1920x1080-textles.webp'
+import LOR from '../assets/lor-icon.webp'
 import LOL from '../assets/League_of_Legends_icon.svg'
 
 export const Actualidad = () => {
@@ -27,6 +26,7 @@ export const Actualidad = () => {
             src={ACTUALIDAD}
             alt="Imagen de actualidad"
             className="h-[600px] w-full max-w-[900px] object-cover rounded-xl shadow-lg"
+            loading="lazy"
           />
         </a>
         <Grid mt={2} fontSize="24px" fontWeight={700}>
@@ -69,6 +69,7 @@ export const Actualidad = () => {
                     src={news.logo}
                     alt="Logo"
                     className="h-5 w-5 rounded-full object-contain bg-white/10 p-0.5"
+                    loading="lazy"
                   />
                 ) : (
                   <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10">
@@ -83,6 +84,7 @@ export const Actualidad = () => {
               src={news.img}
               alt={news.title}
               className="h-[80px] w-[140px] object-cover rounded-lg flex-shrink-0"
+              loading="lazy"
             />
           </a>
         ))}

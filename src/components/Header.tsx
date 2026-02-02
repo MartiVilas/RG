@@ -22,7 +22,7 @@ export const Header = () => {
       aria-label="Barra de navegació principal"
     >
       <Grid className="flex items-center gap-8">
-        <img src={RiotGif} className="size-20" alt="Riot Games Logo" />
+        <img src={RiotGif} className="size-20" alt="Riot Games Logo" loading="lazy" />
 
         {!isMobile && (
           <ul className="flex ml-10 gap-10">

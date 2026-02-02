@@ -1,5 +1,8 @@
 #root {
   font-family: 'Geist', system-ui, sans-serif;
+  font-family: 'Geist', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 ::selection {

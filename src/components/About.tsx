@@ -17,7 +17,12 @@ export const About = () => {
       </div>
 
       <div className="flex justify-center px-10 py-16 text-black bg-white">
-        <img src={RiotGif} alt="Riot Games Logo" className="w-[400px] h-[400px] mr-10" />
+        <img
+          src={RiotGif}
+          alt="Riot Games Logo"
+          className="w-[400px] h-[400px] mr-10"
+          loading="lazy"
+        />
 
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold mb-4">¿Quiénes somos?</h2>
@@ -30,7 +35,9 @@ export const About = () => {
             servicio de quienes tanto los adoran.
           </p>
 
-          <p className="leading-relaxed text-lg mb-2 mt-2">Y aquí un mensaje de nuestro CEO: Dylan Jadeja</p>
+          <p className="leading-relaxed text-lg mb-2 mt-2">
+            Y aquí un mensaje de nuestro CEO: Dylan Jadeja
+          </p>
 
           <audio src={AudioCEO} controls />
         </div>
