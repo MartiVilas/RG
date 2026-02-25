@@ -1,0 +1,204 @@
+@use "./variables" as *;
+
+$header-bg: #f3f4f6;
+$header-text: #111827;
+
+@if $theme == dark {
+  $header-bg: $color-bg;
+  $header-text: $color-text;
+}
+
+.rg-header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: $space-4;
+  background: $header-bg;
+  color: $header-text;
+
+  // "nitiditat" (aplicada a text/icones)
+  text-rendering: geometricPrecision;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: $space-6;
+    min-width: 0;
+  }
+
+  &__logo {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+
+    // "nitiditat" (aplicada a imatge/logo)
+    image-rendering: -webkit-optimize-contrast;
+    filter: contrast(1.08) saturate(1.05);
+  }
+
+  // Desktop nav (en mòbil s'amaga, en desktop es mostra)
+  &__nav {
+    list-style: none;
+    display: none; // MOBILE FIRST: ocult
+    gap: $space-6;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-2 $space-3;
+    border-radius: 0.5rem;
+
+    color: $color-text;
+    text-decoration: none;
+    font-size: $font-sm;
+
+    transition: background 180ms ease, transform 180ms ease;
+
+    &:hover {
+      background: $color-accent;
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-accent-hover;
+      outline-offset: 2px;
+    }
+  }
+
+  // Login (desktop)
+  &__login {
+    display: none; // MOBILE FIRST: ocult
+    align-items: center;
+    gap: $space-2;
+
+    padding: $space-2 $space-3;
+    border-radius: 0.75rem;
+    background: $color-accent;
+    color: $color-text;
+    text-decoration: none;
+    font-size: $font-sm;
+
+    transition: background 180ms ease, transform 180ms ease;
+
+    &:hover {
+      background: $color-accent-hover;
+      transform: translateY(-1px);
+    }
+  }
+
+  // Botó hamburguesa (mòbil)
+  &__toggle {
+    display: inline-flex; // MOBILE FIRST: visible
+    align-items: center;
+    justify-content: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 0;
+    border-radius: 0.75rem;
+    background: transparent;
+    color: $color-text;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid $color-accent-hover;
+      outline-offset: 2px;
+    }
+  }
+
+  // Dropdown mòbil
+  &__mobile {
+    position: absolute;
+    top: calc(100% + #{$space-2});
+    right: $space-4;
+
+    width: 12rem;
+    background: $color-surface;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    z-index: 50;
+
+    display: none; // controlat per classe is-open
+
+    &.is-open {
+      display: block;
+    }
+
+    a {
+      display: block;
+      padding: $space-3 $space-4;
+      color: $color-text;
+      text-decoration: none;
+
+      transition: background 160ms ease;
+
+      &:hover {
+        background: $color-accent;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $color-accent-hover;
+        outline-offset: -2px;
+      }
+    }
+  }
+}
+
+// Bucle Sass (@for) - genera classes amb "delay" progressiu (complir requisit de bucle)
+@for $i from 1 through 4 {
+  .rg-nav__item--#{$i} {
+    transition-delay: $i * 30ms;
+  }
+}
+
+// BREAKPOINT TABLET (>=768px)
+@media (min-width: $bp-tablet) {
+  .rg-header {
+    padding: $space-4 $space-6;
+
+    &__link {
+      font-size: $font-base;
+    }
+
+    &__mobile {
+      width: 14rem;
+    }
+  }
+}
+
+// BREAKPOINT DESKTOP (>=1024px)
+@media (min-width: $bp-desktop) {
+  .rg-header {
+    padding: $space-4 $space-8;
+
+    &__nav {
+      display: flex; // mostrar menú en escriptori
+    }
+
+    &__login {
+      display: inline-flex; // mostrar login en escriptori
+    }
+
+    &__toggle {
+      display: none; // amagar hamburguesa en escriptori
+    }
+
+    &__mobile {
+      display: none !important; // no dropdown en escriptori
+    }
+  }
+}
